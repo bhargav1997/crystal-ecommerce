@@ -1,0 +1,847 @@
+/* Rewards & Points Styles */
+.rewards-points {
+   width: 100%;
+}
+
+/* Rewards Summary Card */
+.rewards-summary-card {
+   background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+   border-radius: var(--border-radius);
+   padding: 0;
+   margin-bottom: 2rem;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   position: relative;
+}
+
+.rewards-summary-card::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 300px;
+   height: 300px;
+   background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+   border-radius: 50%;
+   transform: translate(50%, -50%);
+}
+
+.rewards-summary-header {
+   display: flex;
+   align-items: center;
+   padding: 2rem;
+   position: relative;
+   z-index: 1;
+}
+
+.points-display {
+   margin-right: 2.5rem;
+}
+
+.points-circle.large {
+   width: 120px;
+   height: 120px;
+   background: rgba(255, 255, 255, 0.15);
+   border: 2px solid rgba(255, 255, 255, 0.3);
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+   position: relative;
+   overflow: hidden;
+}
+
+.points-circle.large::after {
+   content: "";
+   position: absolute;
+   top: -10px;
+   left: -10px;
+   right: -10px;
+   bottom: -10px;
+   background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+   z-index: -1;
+}
+
+.points-circle.large .points-value {
+   font-size: 2.5rem;
+   font-weight: 700;
+   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.points-circle.large .points-label {
+   font-size: 1rem;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   opacity: 0.9;
+}
+
+.tier-display {
+   flex-grow: 1;
+   color: white;
+}
+
+.current-tier {
+   display: flex;
+   align-items: center;
+   margin-bottom: 1rem;
+}
+
+.tier-label {
+   font-size: 1rem;
+   opacity: 0.9;
+   margin-right: 0.8rem;
+}
+
+.tier-badge {
+   display: inline-block;
+   padding: 0.4rem 1rem;
+   border-radius: 20px;
+   font-size: 0.9rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tier-badge.bronze {
+   background: linear-gradient(135deg, #cd7f32, #a05a2c);
+   color: white;
+}
+
+.tier-badge.silver {
+   background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
+   color: #333;
+}
+
+.tier-badge.gold {
+   background: linear-gradient(135deg, #ffd700, #ffaa00);
+   color: #333;
+}
+
+.tier-badge.platinum {
+   background: linear-gradient(135deg, #e5e4e2, #b9b8b6);
+   color: #333;
+}
+
+.points-value {
+   display: flex;
+   align-items: center;
+   margin-bottom: 1.2rem;
+}
+
+.value-label {
+   font-size: 1rem;
+   opacity: 0.9;
+   margin-right: 0.8rem;
+}
+
+.value-amount {
+   font-size: 1.2rem;
+   font-weight: 600;
+}
+
+.next-tier-progress {
+   background: rgba(255, 255, 255, 0.1);
+   border-radius: 10px;
+   padding: 1rem;
+}
+
+.progress-label {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 0.5rem;
+   font-size: 0.9rem;
+   font-weight: 500;
+}
+
+.progress-bar-container {
+   height: 10px;
+   background: rgba(255, 255, 255, 0.2);
+   border-radius: 5px;
+   overflow: hidden;
+   margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+   height: 100%;
+   background: linear-gradient(90deg, var(--secondary-color), #e6d9b8);
+   border-radius: 5px;
+   transition: width 0.5s ease;
+}
+
+.progress-text {
+   font-size: 0.85rem;
+   opacity: 0.9;
+   text-align: right;
+}
+
+/* Rewards Tabs */
+.rewards-tabs {
+   display: flex;
+   border-bottom: 1px solid #eee;
+   margin-bottom: 1.5rem;
+   overflow-x: auto;
+   scrollbar-width: none; /* Firefox */
+   -ms-overflow-style: none; /* IE and Edge */
+}
+
+.rewards-tabs::-webkit-scrollbar {
+   display: none; /* Chrome, Safari, Opera */
+}
+
+.tab-button {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   padding: 1rem 1.5rem;
+   background: none;
+   border: none;
+   border-bottom: 3px solid transparent;
+   font-size: 1rem;
+   font-weight: 500;
+   color: var(--text-light);
+   cursor: pointer;
+   transition: var(--transition);
+   white-space: nowrap;
+}
+
+.tab-button:hover {
+   color: var(--primary-color);
+}
+
+.tab-button.active {
+   color: var(--primary-color);
+   border-bottom-color: var(--primary-color);
+   font-weight: 600;
+}
+
+.rewards-tab-content {
+   min-height: 400px;
+}
+
+/* Overview Tab */
+.rewards-overview {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+}
+
+.rewards-info-card {
+   background-color: white;
+   border-radius: var(--border-radius);
+   padding: 1.5rem;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   border: 1px solid #eee;
+}
+
+.rewards-info-card h3 {
+   font-size: 1.3rem;
+   color: var(--primary-dark);
+   margin-bottom: 1rem;
+   padding-bottom: 0.5rem;
+   border-bottom: 1px solid #eee;
+}
+
+.rewards-info-card h4 {
+   font-size: 1.1rem;
+   color: var(--primary-dark);
+   margin: 1.5rem 0 0.8rem;
+}
+
+.rewards-info-card p {
+   color: var(--text-color);
+   line-height: 1.6;
+   margin-bottom: 1rem;
+}
+
+.rewards-info-card ul {
+   padding-left: 1.5rem;
+   margin-bottom: 1rem;
+}
+
+.rewards-info-card li {
+   color: var(--text-color);
+   margin-bottom: 0.5rem;
+   line-height: 1.5;
+}
+
+/* Points History Tab */
+.points-history {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+}
+
+.points-summary {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 1.5rem;
+   margin-bottom: 1rem;
+}
+
+.summary-box {
+   background-color: white;
+   border-radius: var(--border-radius);
+   padding: 1.5rem;
+   text-align: center;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   border: 1px solid #eee;
+   transition: var(--transition);
+}
+
+.summary-box:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.summary-value {
+   font-size: 2rem;
+   font-weight: 700;
+   color: var(--primary-dark);
+   margin-bottom: 0.5rem;
+}
+
+.summary-label {
+   font-size: 0.9rem;
+   color: var(--text-light);
+}
+
+/* Points Timeline */
+.points-timeline {
+   background-color: white;
+   border-radius: var(--border-radius);
+   padding: 1.5rem;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   border: 1px solid #eee;
+}
+
+.points-timeline h3 {
+   font-size: 1.2rem;
+   color: var(--primary-dark);
+   margin-bottom: 1.5rem;
+   padding-bottom: 0.5rem;
+   border-bottom: 1px solid #eee;
+}
+
+.timeline-container {
+   position: relative;
+   padding-left: 2.5rem;
+}
+
+.timeline-container::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 10px;
+   width: 2px;
+   background: linear-gradient(to bottom, var(--primary-light), var(--primary-color));
+}
+
+.timeline-item {
+   position: relative;
+   margin-bottom: 2rem;
+   animation: fadeIn 0.5s ease-out;
+}
+
+.timeline-item:last-child {
+   margin-bottom: 0;
+}
+
+.timeline-item:nth-child(2) {
+   animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(3) {
+   animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(4) {
+   animation-delay: 0.3s;
+}
+
+.timeline-item:nth-child(5) {
+   animation-delay: 0.4s;
+}
+
+.timeline-item:nth-child(6) {
+   animation-delay: 0.5s;
+}
+
+.timeline-icon {
+   position: absolute;
+   left: -2.5rem;
+   width: 24px;
+   height: 24px;
+   border-radius: 50%;
+   background-color: white;
+   border: 2px solid var(--primary-color);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 0.8rem;
+   color: var(--primary-color);
+   z-index: 1;
+   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+.timeline-content {
+   background-color: #f9f9f9;
+   border-radius: var(--border-radius);
+   padding: 1.2rem;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+   border: 1px solid #eee;
+   transition: var(--transition);
+}
+
+.timeline-content:hover {
+   transform: translateY(-3px);
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-date {
+   font-size: 0.85rem;
+   color: var(--text-light);
+   margin-bottom: 0.5rem;
+}
+
+.timeline-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 0.8rem;
+}
+
+.timeline-title {
+   font-weight: 600;
+   color: var(--primary-dark);
+   font-size: 1.05rem;
+}
+
+.timeline-points {
+   font-weight: 700;
+   padding: 0.3rem 0.8rem;
+   border-radius: 20px;
+   font-size: 0.9rem;
+}
+
+.timeline-points.earned {
+   background-color: rgba(76, 175, 80, 0.1);
+   color: var(--success-color);
+}
+
+.timeline-points.redeemed {
+   background-color: rgba(244, 67, 54, 0.1);
+   color: var(--error-color);
+}
+
+.timeline-details {
+   color: var(--text-color);
+   font-size: 0.95rem;
+   line-height: 1.5;
+}
+
+/* Redeem Rewards Tab */
+.redeem-rewards {
+   padding: 1rem 0;
+}
+
+.rewards-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+   gap: 1.5rem;
+}
+
+.reward-card {
+   background-color: white;
+   border-radius: var(--border-radius);
+   overflow: hidden;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   border: 1px solid #eee;
+   transition: var(--transition);
+   display: flex;
+   flex-direction: column;
+   position: relative;
+}
+
+.reward-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.reward-card.popular {
+   border-color: var(--primary-color);
+   box-shadow: 0 5px 15px rgba(58, 110, 165, 0.15);
+}
+
+.popular-tag {
+   position: absolute;
+   top: 1rem;
+   right: -2rem;
+   background: linear-gradient(135deg, #ff9800, #ff5722);
+   color: white;
+   padding: 0.3rem 2rem;
+   font-size: 0.8rem;
+   font-weight: 600;
+   transform: rotate(45deg);
+   z-index: 1;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reward-header {
+   padding: 1.5rem;
+   background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+   color: white;
+   position: relative;
+   text-align: center;
+}
+
+.reward-icon {
+   width: 60px;
+   height: 60px;
+   background-color: rgba(255, 255, 255, 0.2);
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto 1rem;
+   font-size: 1.5rem;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reward-header h3 {
+   font-size: 1.2rem;
+   margin-bottom: 1rem;
+   font-weight: 600;
+}
+
+.reward-cost {
+   display: inline-flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 0.5rem 1.2rem;
+   background-color: rgba(255, 255, 255, 0.2);
+   border-radius: 20px;
+   font-weight: 600;
+}
+
+.points-value {
+   font-size: 1.5rem;
+   line-height: 1;
+}
+
+.points-label {
+   font-size: 0.8rem;
+   opacity: 0.9;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+}
+
+.reward-description {
+   padding: 1.5rem;
+   flex-grow: 1;
+   color: var(--text-color);
+   line-height: 1.5;
+   text-align: center;
+   border-bottom: 1px solid #eee;
+}
+
+.reward-footer {
+   padding: 1.5rem;
+}
+
+.points-status {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.5rem;
+   margin-bottom: 1rem;
+   padding: 0.5rem;
+   border-radius: var(--border-radius);
+   font-size: 0.9rem;
+}
+
+.points-status.available {
+   background-color: rgba(76, 175, 80, 0.1);
+   color: var(--success-color);
+}
+
+.points-status.needed {
+   background-color: rgba(244, 67, 54, 0.1);
+   color: var(--error-color);
+}
+
+.redeem-button {
+   width: 100%;
+   padding: 0.8rem 1.2rem;
+   background-color: var(--primary-color);
+   color: white;
+   border: none;
+   border-radius: var(--border-radius);
+   font-weight: 600;
+   cursor: pointer;
+   transition: var(--transition);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.5rem;
+}
+
+.redeem-button:hover:not(.disabled) {
+   background-color: var(--primary-dark);
+   transform: translateY(-2px);
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.redeem-button.disabled {
+   background-color: var(--background-dark);
+   color: var(--text-light);
+   cursor: not-allowed;
+}
+
+/* Membership Tiers Tab */
+.membership-tiers {
+   padding: 1rem 0;
+}
+
+.tiers-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 1.5rem;
+}
+
+.tier-card {
+   background-color: white;
+   border-radius: var(--border-radius);
+   overflow: hidden;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   border: 1px solid #eee;
+   transition: var(--transition);
+   position: relative;
+}
+
+.tier-card.current {
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+   transform: scale(1.02);
+   z-index: 1;
+}
+
+.tier-header {
+   padding: 1.5rem;
+   text-align: center;
+   position: relative;
+}
+
+.tier-header h3 {
+   font-size: 1.3rem;
+   font-weight: 700;
+   margin-bottom: 0.5rem;
+   color: white;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+}
+
+.tier-header.bronze {
+   background: linear-gradient(135deg, #cd7f32, #a05a2c);
+}
+
+.tier-header.silver {
+   background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
+}
+
+.tier-header.gold {
+   background: linear-gradient(135deg, #ffd700, #ffaa00);
+}
+
+.tier-header.platinum {
+   background: linear-gradient(135deg, #e5e4e2, #b9b8b6);
+}
+
+.current-tier-badge {
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+   background-color: white;
+   color: var(--primary-dark);
+   padding: 0.3rem 0.8rem;
+   border-radius: 20px;
+   font-size: 0.8rem;
+   font-weight: 600;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tier-requirement {
+   padding: 1rem 1.5rem;
+   text-align: center;
+   font-weight: 600;
+   color: var(--primary-dark);
+   background-color: var(--background-light);
+   border-bottom: 1px solid #eee;
+}
+
+.tier-benefits {
+   padding: 1.5rem;
+}
+
+.tier-benefits h4 {
+   font-size: 1.1rem;
+   color: var(--primary-dark);
+   margin-bottom: 1rem;
+   text-align: center;
+}
+
+.tier-benefits ul {
+   padding-left: 1.5rem;
+}
+
+.tier-benefits li {
+   margin-bottom: 0.8rem;
+   color: var(--text-color);
+   line-height: 1.5;
+}
+
+/* Guest Restriction Message */
+.guest-restriction-message {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   padding: 3rem 2rem;
+   background-color: white;
+   border-radius: var(--border-radius);
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   border: 1px solid #eee;
+}
+
+.guest-restriction-message svg {
+   font-size: 3rem;
+   color: var(--primary-color);
+   margin-bottom: 1.5rem;
+   opacity: 0.8;
+}
+
+.guest-restriction-message h3 {
+   font-size: 1.5rem;
+   color: var(--primary-dark);
+   margin-bottom: 1rem;
+}
+
+.guest-restriction-message p {
+   color: var(--text-color);
+   margin-bottom: 1.5rem;
+   max-width: 500px;
+}
+
+.guest-restriction-message .action-button {
+   display: inline-block;
+   padding: 0.8rem 1.5rem;
+   background-color: var(--primary-color);
+   color: white;
+   border-radius: var(--border-radius);
+   font-weight: 600;
+   text-decoration: none;
+   transition: var(--transition);
+}
+
+.guest-restriction-message .action-button:hover {
+   background-color: var(--primary-dark);
+   transform: translateY(-2px);
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+   .rewards-summary-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+   }
+
+   .points-display {
+      margin-right: 0;
+      margin-bottom: 1.5rem;
+   }
+
+   .tier-display {
+      width: 100%;
+   }
+
+   .current-tier {
+      justify-content: center;
+   }
+
+   .points-value {
+      justify-content: center;
+   }
+
+   .rewards-tabs {
+      justify-content: flex-start;
+   }
+
+   .tab-button {
+      padding: 0.8rem 1rem;
+   }
+
+   .points-summary {
+      grid-template-columns: 1fr;
+   }
+
+   .table-header,
+   .history-row {
+      grid-template-columns: 1fr 2fr 1fr;
+      font-size: 0.9rem;
+      padding: 0.8rem 1rem;
+   }
+
+   .rewards-grid,
+   .tiers-grid {
+      grid-template-columns: 1fr;
+   }
+}
+
+/* Animations */
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: translateY(10px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+.rewards-summary-card,
+.rewards-info-card,
+.summary-box,
+.history-table,
+.reward-card,
+.tier-card {
+   animation: fadeIn 0.5s ease-out;
+}
+
+.reward-card:nth-child(2) {
+   animation-delay: 0.1s;
+}
+
+.reward-card:nth-child(3) {
+   animation-delay: 0.2s;
+}
+
+.reward-card:nth-child(4) {
+   animation-delay: 0.3s;
+}
+
+.reward-card:nth-child(5) {
+   animation-delay: 0.4s;
+}
+
+.tier-card:nth-child(2) {
+   animation-delay: 0.1s;
+}
+
+.tier-card:nth-child(3) {
+   animation-delay: 0.2s;
+}
+
+.tier-card:nth-child(4) {
+   animation-delay: 0.3s;
+}
