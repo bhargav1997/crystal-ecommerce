@@ -98,7 +98,7 @@ const ProfileDashboard = ({ user }) => {
                         </span>
                       </div>
                     </div>
-                    <div className="order-details">
+                    <div className="profile-order-details">
                       <div className="order-items">{order.items} items</div>
                       <div className="order-total">${order.total.toFixed(2)}</div>
                     </div>

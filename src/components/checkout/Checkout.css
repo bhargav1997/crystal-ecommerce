@@ -89,7 +89,7 @@
   background-color: #8a2be2;
 }
 
-.order-summary {
+.checkout-order-summary {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -97,7 +97,7 @@
   height: fit-content;
 }
 
-.order-summary h2 {
+.checkout-order-summary h2 {
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
   color: #333;

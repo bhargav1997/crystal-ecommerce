@@ -52,7 +52,7 @@ export const products = [
     category: "Protection",
     stock: 25,
     rating: 4.8,
-    featured: false
+    featured: true
   },
   {
     id: 6,

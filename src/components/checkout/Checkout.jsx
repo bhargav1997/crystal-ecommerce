@@ -269,7 +269,7 @@ const Checkout = () => {
                </button>
             </form>
 
-            <div className='order-summary'>
+            <div className='checkout-order-summary'>
                <h2>Order Summary</h2>
 
                <div className='order-items'>
